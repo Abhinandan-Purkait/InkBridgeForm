@@ -8,13 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css" />
-    <script src="js/main.js"></script>
-    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Website CSS style -->
-    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Website Font style -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <!--e>script src="js/main.js"></script-->
 </head>
 
 <body>
@@ -31,137 +25,67 @@
     </div>
     </center>
     </div>
-    <div class="col-lg-5 col-md-5 col-sm-10 col-xs-10 FormPart">
-
-        <div class="main-login main-center" style="margin-top: 1.5%">
-
-            <form id="MyForm" method="post" action="#" style="margin-top:1.5%;" onsubmit="return checkForm(this);">
-
-                <div class="form-group" style="padding-left: 16.5%;padding-right: 16.5%;padding-top: 1.5%;">
-
-                    <center><label class="texts" for="name">
-                            <h1>Sign Up</h1>
-                        </label></center>
-                    <label class="texts" for="name">
-                        <h4>Username</h4>
+    <div class="right">
+        <form method="post" onsubmit="return check();">
+            <div class="form-row">
+                <div class="form-group text-center">
+                    <label for="head">
+                        <h2>Create an account</h2>
                     </label>
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                            <input required="" type="text" class="form-control" name="name" id="name" placeholder="Enter your Name"
-                                style="margin-left: 3%;" oninvalid="this.setCustomValidity('Please Enter Valid Name')" oninput="filled();">
-                        </div>
-                    </div>
                 </div>
-
-
-                <div class="form-group" style="padding-left: 10.5%;padding-right: 10.5%;padding-top: 1.5%;">
-                    <label class="texts" for="username">
-                        <h4>Pen Name</h4>
-                    </label>
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-pencil fa" aria-hidden="true"></i></span>
-                            <input required="" type="text" class="form-control" name="penname" id="penname" placeholder="Enter your Pen Name"
-                                style="margin-left: 3%;"" oninvalid="this.setCustomValidity('Please Enter Valid Phone Number')" oninput="filled();">
-                        </div>
-                    </div>
+                <div class="form-group col-md-6">
+                    <label for="inputname">Username</label>
+                    <input type="text" class="form-control" id="inputname" placeholder="Username" required="" name="user"
+                        oninput="fillcheck();">
                 </div>
-
-                <div class="form-group" style="padding-left: 5.5%;padding-right: 5.5%;padding-top: 1.5%;">
-                    <label class="texts" for="email">
-                        <h4>Your Email</h4>
-                    </label>
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-                            <input oninput="filled();" required="" type="text" class="form-control" name="email" id="email" placeholder="Enter your Email"
-                                style="margin-left: 3%;" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" oninvalid="this.setCustomValidity('Please Enter Valid Email')">
-                        </div>
-                    </div>
+                <div class="form-group col-md-6">
+                    <label for="inputpen">Pen-name</label>
+                    <input type="text" class="form-control" id="inputpen" placeholder="Pen-name" required="" name="pen"
+                        oninput="fillcheck();">
                 </div>
-
-                <div class="form-group" style="padding-left: 10.5%;padding-right: 10.5%;padding-top: 1.5%;">
-                    <label class="texts" for="password">
-                        <h4>Password</h4>
-                    </label>
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                            <input oninput="filled();" required="" type="password" class="form-control" name="password" id="password"
-                                placeholder="Enter your Password" style="margin-left: 3%;" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-                                oninvalid="this.setCustomValidity('Please Enter Valid Password')">
-                        </div>
-                    </div>
+                <div class="form-group col-md-6">
+                    <label for="inputEmail4">Email</label>
+                    <input type="email" class="form-control" id="inputEmail4" placeholder="Email" name="email" required=""
+                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" oninput="fillcheck();">
                 </div>
-
-                <div class="form-group" style="padding-left: 16.5%;padding-right: 16.5%;padding-top: 1.5%;padding-bottom:5.5%;">
-                    <label class="texts" for="confirm">
-                        <h4>Confirm Password</h4>
-                    </label>
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                            <input oninput="filled();" required="" type="password" class="form-control" name="confirm" id="confirm"
-                                placeholder="Confirm your Password" style="margin-left: 3%;" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-                                title="Minimum 8 length with atleast one Uppercase and a number" oninvalid="this.setCustomValidity('Please Fill This ')">
-                        </div>
-                    </div>
+                <div class="form-group col-md-6">
+                    <label for="inputPassword">Password</label>
+                    <input type="password" class="form-control" id="password" placeholder="Password" required="" name="pass"
+                        oninput="fillcheck();">
                 </div>
-                <center>
-                    <div class="form-group " style="padding-top: 1.5%;padding-bottom: 1.5%;">
-                        <input required="" type="submit" name="submit" placeholder="Register" id="nextbutton" class="btn btn-success btn-lg btn-block login-button"
-                            onclick="func()" style="width:35%;">
-                    </div>
-                </center>
-            </form>
-
-        </div>
-
+                <div class="form-group col-md-6">
+                    <label for="inputPassword2">Re-Enter-Password</label>
+                    <input type="password" class="form-control" id="password1" placeholder="Re-Enter-Password"
+                        required="" name="pass1" oninput="fillcheck();">
+                </div>
+                <div class="form-group col-md-6">
+                    <input type="submit" id="next" value="Next">
+                </div>
+            </div>
+        </form>
     </div>
+
     <script>
-        function func() {
-            var username = document.getElementById("name").elements.namedItem("name").value;
-            var email = document.getElementById("MyForm").elements.namedItem("email").value;
-            email = email.substring(0, email.indexOf('@'));
-            var password = document.getElementById("MyForm").elements.namedItem("password").value;
-            var cnf_password = document.getElementById("MyForm").elements.namedItem("confirm").value;
-            var flag = 1;
-            if (password != cnf_password) {
-                alert("Confirm Password doesnot match !");
-                flag = 0;
-            }
-            if ((username.length > 0) && (email.length > 0)) {
-                if (password.includes(username)) {
-                    alert("Username cannot be in password");
-                    flag = 0;
-                }
-                if (password.includes(email)) {
-                    alert("Email cannot be in password");
-                    flag = 0;
-                }
+        function check() {
+            var password = document.getElementById("password").value;
+            var password1 = document.getElementById("password1").value;
+            if (password1 == (password)) {
+                return true;
             } else {
-                flag = 0;
-            }
-            if (flag == 1) {
-                $("#MyForm").get(0).setAttribute('action', 'VideoGallery.html');
+                alert("Passwords didn't match");
+                return false;
             }
         }
 
-        function filled() {
-            var username = document.getElementById("name").value;
-            var penname = document.getElementById("penname").value;
-            var email = document.getElementById("email").value;
-            var pass = document.getElementById("password").value;
-            var pass1 = document.getElementById("confirm").value;
-            var f = document.getElementById("nextbutton");
-            console.log(pass1);
-            console.log(pass);
-            console.log(username);
-            console.log(penname);
-            console.log(email);
-            if (pass.length != 0 && pass1.length != 0 && username.length != 0 && penname.length != 0 && email.length !=0)
-            {
+        function fillcheck() {
+            var password = document.getElementById("password").value;
+            var password1 = document.getElementById("password1").value;
+            var username = document.getElementById("inputname").value;
+            var penname = document.getElementById("inputpen").value;
+            var email = document.getElementById("inputEmail4").value;
+            var f = document.getElementById("next");
+            if (password.length != 0 && password1.length != 0 && username.length != 0 && penname.length != 0 && email.length !=
+                0) {
                 f.style.display = 'block';
             } else {
                 f.style.display = 'none';

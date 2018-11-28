@@ -22,10 +22,6 @@
         font-size: 25px;
     }
 
-    .FormPart {
-        margin-left: 5%;
-        margin-top: 5%;
-    }
 }
 
 @media only screen and (max-width: 992px) {
@@ -46,11 +42,6 @@
         font-size: 25px;
         display: none;
     }
-
-    .FormPart {
-        margin-left: 5%;
-        margin-top: 5%;
-    }
 }
 
 .right h2 {
@@ -61,6 +52,7 @@
 }
 
 .right {
+    
     font-size: 20px;
 }
 
@@ -88,47 +80,4 @@
 
 #next:hover {
     background: #ff4987;
-}
-
-
-form {
-    opacity: 0.95;
-    border-radius: 55%;
-    border-style: inherit;
-    background-attachment: fixed;
-    background-color: rgb(255, 255, 255);
-    position: relative;
-    box-shadow: 4px 8px 16px 6px rgb(56, 39, 3);
-    padding: 10px;
-}
-
-form:hover {
-    transform: scale(1.03);
-    box-shadow: 4px 8px 16px 6px rgba(116, 57, 18, 0.7);
-}
-
-h2 {
-    margin-top: 2%;
-}
-
-body {
-    background-image: url('images/background1.jpg');
-    background-size: cover;
-}
-
-.texts {
-    opacity: 1;
-}
-
-#form_cont {
-    color: white;
-}
-
-#cont {
-    margin-top: 10%;
-    color: green;
-}
-
-#nextbutton{
-    display: none;
 }
